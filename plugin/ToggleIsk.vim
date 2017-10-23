@@ -75,10 +75,15 @@ nnoremap <unique>  <Plug>Toggle_isk_slash      :call <SID>Toggle_isk_slash    ( 
 nnoremap <unique>  <Plug>Toggle_isk_colon      :call <SID>Toggle_isk_colon    ( )<CR>
 nnoremap <unique>  <Plug>Toggle_isk_sharp      :call <SID>Toggle_isk_sharp    ( )<CR>
 
-
-if !hasmapto("<Plug>Toggle_isk_hypen")
-    nmap  <Leader>t-  <Plug>Toggle_isk_hypen
+" 应该搞个字典: map "key" + <Plug>
+" 然后写个函数来映射
+if maparg('<Leader>t-')
+    echom("<Leader>t- is already used")
 endif
+if !hasmapto("<Plug>Toggle_isk_hypen")
+    nmap <unique>  <Leader>t-  <Plug>Toggle_isk_hypen
+endif
+
 
 if !hasmapto("<Plug>Toggle_isk_underline")
     nmap  <Leader>t_  <Plug>Toggle_isk_underline
