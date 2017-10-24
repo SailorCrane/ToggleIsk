@@ -14,7 +14,8 @@ else
 endif
 
 if !has("python") && !has("python3")
-    echom "ToggleIsk need python or python3 support"
+    "echom  "ToggleIsk need python or python3 support"
+    echoerr "'ToggleIsk' need vim support support' python' or 'python3'"
     finish
 endif
 
