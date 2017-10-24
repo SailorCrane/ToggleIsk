@@ -6,9 +6,15 @@
 
 " only load once: because use <unique> map
 " so don't support hot load (If changed, You need to restart vim to load this plugin)
+
 if !exists("g:ToggleIskLoaded")
     let g:ToggleIskLoaded = 1
 else
+    finish
+endif
+
+if !has("python") && !has("python3")
+    echom "ToggleIsk need python or python3 support"
     finish
 endif
 
